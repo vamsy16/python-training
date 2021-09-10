@@ -1,0 +1,120 @@
+tasks:
+======
+1.write a program to find a largest number in a list?
+sol:
+x = [2,3,7,45,36,57,29]
+print(max(x))
+o/p:
+PS C:\atom> python practise.py
+57
+
+2.write a program to find a second largest number in a list?
+sol:
+x = [2,3,7,45,36,57,29]
+x.sort()
+print("enter the 2nd largest value: ",x[-2])
+o/p:
+PS C:\atom> python practise.py
+enter the 2nd largest value:  45
+
+n = int(input("enter the number of elements:"))
+x = []
+
+for i in range(0,n):
+    y = int(input())
+    x.append(y)
+x.sort()
+print("enter the 2nd largest value: ",x[-2])
+
+3.write a program to put even and odd elements in a list into two different lists?
+sol:
+n = int(input("enter the number of elements:"))
+x = []
+y = []
+z = []
+
+for i in range(0,n):
+    a = int(input())
+    x.append(a)
+for i in x:
+    if(i % 2 == 0):
+        y.append(i)
+    else:
+        z.append(i)
+print(x)
+print("even elements:",y)
+print("odd elements:",z)
+o/p:
+PS C:\atom> python practise.py
+enter the number of elements:5
+6
+7
+8
+3
+1
+[6, 7, 8, 3, 1]
+even elements: [6, 8]
+odd elements: [7, 3, 1]
+
+4. write a program to find all numbers in a range which are perfect squares and sum of all digits in the number less than 10?
+sol:
+x = int(input("enter the range:"))
+
+for i in range(1,x+1):
+    print(i, end = ' ')
+print()
+for i in range(1,x+1):
+    z = i + i
+    if (z < 10):
+        y = i * i
+        print("Square of ",i," is:",y)
+o/p:
+PS C:\atom> python practise.py
+enter the range:10
+1 2 3 4 5 6 7 8 9 10
+Square of  1  is: 1
+Square of  2  is: 4
+Square of  3  is: 9
+Square of  4  is: 16
+
+or
+
+x = int(input("enter the range:"))
+
+for i in range(1,x+1):
+    print(i, end = ' ')
+print()
+for i in range(1,x+1):
+    y = i * i
+    a = y
+    sm = 0
+    while (y > 0):
+        z = y % 10
+        sm += z
+        y = y // 10
+    if(sm < 10):
+        print("square of ",i," is:",a)
+o/p:
+PS C:\atom> python practise.py
+enter the range:10
+1 2 3 4 5 6 7 8 9 10
+square of  1  is: 1
+square of  2  is: 4
+square of  3  is: 9
+square of  4  is: 16
+square of  5  is: 25
+square of  6  is: 36
+square of  9  is: 81
+square of  10  is: 100
+
+5. write a program to remove the duplicates items from a list?
+                    or
+   write a program to remove the 2nd occurrence of the given word in a list where words can repeat?
+sol:
+li = [1,2,3,4,5,6,1,3,2,4,56,7,78,85,4,3,3,5,3,4]
+print(li)
+print(list(set(li)))
+o/p:
+PS C:\atom> python practise.py
+[1, 2, 3, 4, 5, 6, 1, 3, 2, 4, 56, 7, 78, 85, 4, 3, 3, 5, 3, 4]
+[1, 2, 3, 4, 5, 6, 7, 78, 85, 56]
