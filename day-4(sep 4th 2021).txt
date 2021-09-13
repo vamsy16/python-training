@@ -1,0 +1,187 @@
+functions:
+  - it is a set of statements
+  - for reusability
+  - 2 types
+    -> default functions
+      - which are already existed
+      - print(),input(),range()......
+
+    -> user defined functions
+      - user can define his own functionality
+      - syntax:
+          def funName(arg1,arg2,...argn):
+            set of statements
+            return ""
+
+      - 4 ways we have to implement a user defined functions
+        -> without passing parameter and without return
+          eg:
+            def hello():
+                print("hi hello welcome to my world....")
+
+            hello()
+
+        -> without passing parameter and with return
+          eg:
+
+            def add():
+                return 4 + 5
+
+            res =  add()
+            print(res)
+
+        -> with passing parameter and without return
+          eg:
+
+            def add(n1,n2):
+                print(n1+n2)
+
+            a,b = 10,20
+            add(a,b)
+
+        -> with passing parameter and with return
+          eg:
+
+            def mul(v1,v2):
+                return v1 * v2
+
+            n1,n2 = 5, 6
+            res = mul(n1,n2)
+            print(res)
+
+write a function to find given number is even or not?
+sol:
+n = int(input("enter a number:"))
+
+def isEven(x):
+    if(x % 2 == 0):
+        print(x," is even number")
+    else:
+        print(x," is odd number")
+
+isEven(n)
+
+#another method
+
+n = int(input("enter a number:"))
+
+def isEven(x):
+    if(x % 2 == 0):
+        return True
+    else:
+        return False
+
+print(isEven(n))
+
+reusability:
+
+n = int(input("enter a number:"))
+
+def isEven(x):
+    if(x % 2 == 0):
+        return True
+    return False
+
+count = 0
+for i in range(2,n+1):
+    if isEven(i):
+        print(i,end = ' ')
+        count += 1
+print("events in between ",n," is:",count)
+
+task - 1: find even numbers in between range along with count and sum?
+sol:
+x = int(input("enter a number:"))
+y = int(input("enter a number:"))
+
+def isEven(n):
+    if(n % 2 == 0):
+        return True
+    return False
+
+count = 0
+sum = 0;
+for i in range(x,y+1):
+    if isEven(i):
+        print(i,end = ' ')
+        count += 1
+        sum = sum + i
+print("events in between is:",count)
+print("sum of is:",sum)
+
+task - 2: find a given number is prime or not?
+sol:
+n = int(input("enter a number:"))
+x = 0
+if(n > 1):
+    for i in range(2,n):
+        if(n % i == 0):
+            x += 1
+
+    if(x == 0):
+        print(n," is a prime number")
+    else:
+        print(n," is not a prime number")
+else:
+    print(n," is not a prime number")
+
+task - 3: print primes in a given range, then print count?
+sol:
+a = int(input("enter a number:"))
+
+def isPrime(x):
+    count = 0
+    for i in range(2,x):
+        for j in range(2,i):
+            if(i % j == 0):
+                break
+        else:
+            print(i, end = ' ')
+            count += 1
+    print(end = '\n')
+    print("count of numbers:",count)
+
+print("prime numbers are:")
+isPrime(a)
+
+task - 4: print primes in between range then print count?
+sol:
+a = int(input("enter a number:"))
+b = int(input("enter a number:"))
+
+def isPrime(x,y):
+    count = 0
+    for i in range(x+1,y):
+        for j in range(2,i):
+            if(i % j == 0):
+                break
+        else:
+            print(i, end = ' ')
+            count += 1
+    print(end = '\n')
+    print("count of numbers:",count)
+
+print("prime numbers are from ",a," to ",b," are:")
+isPrime(a,b)
+
+task - 5: write a function to print 5 and 10 multiples in a given range?
+sol:
+a = int(input("enter a number:"))
+b = int(input("enter a number:"))
+
+def multiples(x,y):
+    for i in range(x,y):
+        if(i % 5 == 0) & (i % 10 == 0):
+            print(i, end = ' ')
+
+multiples(a,b)
+
+-types of function args:
+  - we have 4 types args:
+    - default argument
+        eg: print(end="\n")
+    - required argument
+        eg: range(endvalue)
+    - keyword arguments
+        eg:
+    - argument length.
