@@ -1,0 +1,78 @@
+String:
+=======
+ - it is a group of chars
+
+ types of accessing:
+ ===================
+    - accessing entire string:
+        eg: name or print(name)
+    - forward accessing
+        - it will starts from 0 and ends with len(str)
+    - backward accessing
+        - it will starts from -1 and ends with -len(str)
+
+        eg:
+        name = "conzura"
+        type(name)
+        len(name)
+        name[0]
+        name[-1]
+    - accessing substring :
+      - we have to use slicing operator " : "
+      - name[staring position : ending position]
+        eg:
+        >>> name[3:6]
+        'zur'
+        >>> name[3:-1]
+        'zur'
+      eg:
+      >>> name = "python programming"
+      >>> name[::2]
+      'pto rgamn'
+      >>> name[1::2]
+      'yhnpormig'
+      >>> name = "python programming"
+      >>> name[-2::2]
+      'n'
+      >>> name[-2::-2]
+      'nmagr otp'
+      >>> name[::-1]
+      'gnimmargorp nohtyp
+
+methods
+=======
+>> name.capitalize()
+'Python programming'
+>>> name.count('p')
+2
+>>> name.encode()
+b'python programming'
+>>> name.startswith('p')
+True
+>>> name.startswith('o')
+False
+>>> name.endswith('g')
+True
+
+format specifiers
+==================
+>>> print("hi {}, i am from {}".format("abdul","kadapa"))
+hi abdul, i am from kadapa
+>>> print("hi {1}, i am from {0}".format("abdul","kadapa"))
+hi kadapa, i am from abdul
+>>>
+
+>>> x = "5"
+>>> x.isdigit()
+True
+>>> x.isalpha()
+False
+>>> x = "17PC1A0554"
+>>> x.isalnum()
+True
+
+a% 5 ==0 or a % 10 == 0
+5 10 15 20 25
+10 20
+
+5 10
