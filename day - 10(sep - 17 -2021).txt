@@ -1,0 +1,292 @@
+Dictionaries:
+==============
+    --> it is a DS and also it is a data type
+    --> here we can store data in pair format(key and value)
+    --> keys are unique and also keys should be strings
+    --> values may be int, may be str, may be list, tuple, set, dict..
+
+    >>> d = {12, 23,45,23}
+    >>> d1 = {"name":"abdul","age":26.3,"branch":"cse"}
+    >>> d1
+    {'name': 'abdul', 'age': 26.3, 'branch': 'cse'}
+    >>> d1["age"]
+    26.3
+    >>> d1["name"]
+    'abdul'
+    >>> d1.get("branch")
+    'cse'
+
+>>> d1["rollno"] = 123
+>>> d1
+{'name': 'abdul', 'age': 26.3, 'branch': 'cse', 'rollno': 123}
+>>> d1["age"] = 27
+>>> d1
+{'name': 'abdul', 'age': 27, 'branch': 'cse', 'rollno': 123}
+>>> d1.keys()
+dict_keys(['name', 'age', 'branch', 'rollno'])
+>>> d1.values()
+dict_values(['abdul', 27, 'cse', 123])
+>>> d1.items()
+dict_items([('name', 'abdul'), ('age', 27), ('branch', 'cse'), ('rollno', 123)])
+>>> d1.pop("age")
+27
+>>> d1
+{'name': 'abdul', 'branch': 'cse', 'rollno': 123}
+>>> d1.popitem()
+('rollno', 123)
+>>> d1
+{'name': 'abdul', 'branch': 'cse'}
+>>> d1.update({"phno":"9865230147"})
+>>> d1
+{'name': 'abdul', 'branch': 'cse', 'phno': '9865230147'}
+>>> d1.update({"branch":"ece"})
+>>> d1
+{'name': 'abdul', 'branch': 'ece', 'phno': '9865230147'}
+>>> marks = {}.fromkeys(["c","cpp","python","java"],35)
+>>> marks
+{'c': 35, 'cpp': 35, 'python': 35, 'java': 35}
+>>> marks["python"] = 80
+>>> marks
+{'c': 35, 'cpp': 35, 'python': 80, 'java': 35}
+
+>>> d1
+{'name': 'abdul', 'branch': 'ece', 'phno': '9865230147', 'email': 'abdul@gmail.com'}
+
+q1)generate a dict dynamically {1:1,2:4,3:9,4:16}
+sol:
+sqrs = {}
+
+n = int(input("enter a value:"))
+for i in range(1,n+1):
+    sqrs[i] = pow(i,2)
+print(sqrs)
+o/p:
+PS C:\atom> python practise.py
+enter a value:5
+{1: 1, 2: 4, 3: 9, 4: 16, 5: 25}
+
+for cubes:
+
+sol:
+sqrs = {}
+cubes = {}
+
+n = int(input("enter a value:"))
+for i in range(1,n+1):
+    sqrs[i] = pow(i,2)
+    cubes.update({i:i**3})
+print(sqrs)
+print(cubes)
+
+o/p:
+PS C:\atom> python practise.py
+enter a value:5
+{1: 1, 2: 4, 3: 9, 4: 16, 5: 25}
+{1: 1, 2: 8, 3: 27, 4: 64, 5: 125}
+
+q2) generate a dict to maintain a specific record
+sol:
+details = {}
+
+n = int(input())
+for i in range(n):
+    key = input("enter key:")
+    value = input("enter value:")
+    details[key] = value
+print(details)
+o/p:
+PS C:\atom> python practise.py
+3
+enter key:name
+enter value:vamsi
+enter key:age
+enter value:21
+enter key:hobbes
+enter value:playing
+{'name': 'vamsi', 'age': '21', 'hobbes': 'playing'}
+
+q3) write a program to read sentence and then print word with count in dict?
+sol:
+words = input().split()
+wordsCount = {}
+for word in words:
+    wordsCount[word] = words.count(word)
+print(wordsCount)
+
+o/p:
+
+PS C:\atom> python practise.py
+i am abdul and i am from kadapa and i am working in css
+{'i': 3, 'am': 3, 'abdul': 1, 'and': 2, 'from': 1, 'kadapa': 1, 'working': 1, 'in': 1, 'css': 1}
+
+another method:
+words = input().split()
+wordsCount1 = {}
+for word in words:
+    wordsCount1[word] = words.count(word)
+print(wordsCount1)
+
+wordsCount2 = {}
+uniqWords = list(set(words))
+print(len(uniqWords))
+for word in uniqWords:
+    wordsCount2[word] = words.count(word)
+print(wordsCount2)
+o/p:
+PS C:\atom> python practise.py
+i am abdul and i am from kadapa and i am working in css
+{'i': 3, 'am': 3, 'abdul': 1, 'and': 2, 'from': 1, 'kadapa': 1, 'working': 1, 'in': 1, 'css': 1}
+9
+{'and': 2, 'from': 1, 'working': 1, 'am': 3, 'kadapa': 1, 'abdul': 1, 'in': 1, 'css': 1, 'i': 3}
+
+Tasks:
+=======
+
+Q1) write a program to add a key value pair to the dictionary?
+sol:
+details = {}
+
+n = int(input())
+for i in range(n):
+    key = input("enter key:")
+    value = input("enter value:")
+    details[key] = value
+print(details)
+o/p:
+PS C:\atom> python practise.py
+3
+enter key:name
+enter value:vamsi
+enter key:age
+enter value:21
+enter key:hobbes
+enter value:playing
+{'name': 'vamsi', 'age': '21', 'hobbes': 'playing'}
+
+Q2)write a program to concatenate two Dictionaries into one?
+sol:
+d1 = {"name":"vamsi","age":21}
+d2 = {"hobbies":"playing"}
+d3 = d1.copy()
+d3.update(d2)
+print(d3)
+o/p:
+PS C:\atom> python practise.py
+{'name': 'vamsi', 'age': 21, 'hobbies': 'playing'}
+
+Q3)write a program to check if a given key exists in a dictionary or not?
+sol:
+d1 = {"name":"vamsi","age":21,"hobbies":"playing"}
+n = input("enter a key:")
+
+if n in d1.keys():
+    print("key exists")
+else:
+    print("key not exists")
+
+o/p:
+PS C:\atom> python practise.py
+enter a key:branch
+key not exists
+PS C:\atom> python practise.py
+enter a key:age
+key exists
+
+Q4) write a program to generate a dictionary that contains numbers (between 1 and n) in the form (x,x*x)?
+sol:
+sqrs = {}
+
+n = int(input("enter a value:"))
+for i in range(1,n+1):
+    sqrs[i] = pow(i,2)
+print(sqrs)
+
+o/p:
+PS C:\atom> python practise.py
+enter a value:5
+{1: 1, 2: 4, 3: 9, 4: 16, 5: 25}
+
+Q5) write a program to sum all the items in a dictionary?
+sol:
+d1 = {"x": 25,"y": 50,"z" :100}
+sm = 0
+
+for i in d1:
+    sm += d1[i]
+
+print(sm)
+o/p:
+PS C:\atom> python practise.py
+175
+
+Q6)write a program to multiply all the items in a dictionary?
+sol:
+d1 = {"x": 25,"y": 50,"z" :100}
+sm = 1
+
+for i in d1:
+    sm *= d1[i]
+
+print(sm)
+o/p:
+PS C:\atom> python practise.py
+125000
+
+Q7)write a program to remove the given key from a dictionary?
+sol:
+d1 = {"x": 25,"y": 50,"z" :100}
+n = input("enter a key to delete:")
+d1.pop(n)
+print(d1)
+o/p:
+PS C:\atom> python practise.py
+enter a key to delete:y
+{'x': 25, 'z': 100}
+
+Q8)python program to map two lists into a dictionary?
+sol:
+d1 = ["name","age","hobbies"]
+d2 = ["lucky",21,"playing"]
+print(dict(zip(d1,d2)))
+o/p:
+PS C:\atom> python practise.py
+{'name': 'lucky', 'age': 21, 'hobbies': 'playing'}
+
+Q9) python program to count the frequency of words appearing in a string using a dictionary?
+sol:
+words = input().split()
+wordsCount1 = {}
+for word in words:
+    wordsCount1[word] = words.count(word)
+print(wordsCount1)
+
+wordsCount2 = {}
+uniqWords = list(set(words))
+print(len(uniqWords))
+for word in uniqWords:
+    wordsCount2[word] = words.count(word)
+print(wordsCount2)
+o/p:
+PS C:\atom> python practise.py
+i am abdul and i am from kadapa and i am working in css
+{'i': 3, 'am': 3, 'abdul': 1, 'and': 2, 'from': 1, 'kadapa': 1, 'working': 1, 'in': 1, 'css': 1}
+9
+{'and': 2, 'from': 1, 'working': 1, 'am': 3, 'kadapa': 1, 'abdul': 1, 'in': 1, 'css': 1, 'i': 3}
+
+Q10) python program to create a dictionary with key as first character and value as words starting with that character?
+sol:
+x = "i am abdul and i am from kadapa and i am working in css"
+y = x.split()
+d1 = {}
+
+for a in y:
+    if(a[0] not in d1.keys()):
+        d1[a[0]] = []
+        d1[a[0]].append(a)
+    else:
+        if(a not in d1[a[0]]):
+            d1[a[0]].append(a)
+print(d1)
+o/p:
+PS C:\atom> python practise.py
+{'i': ['i', 'in'], 'a': ['am', 'abdul', 'and'], 'f': ['from'], 'k': ['kadapa'], 'w': ['working'], 'c': ['css']}
