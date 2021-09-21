@@ -1,0 +1,160 @@
+packages and modules:
+======================
+Package:
+    --> it is a folder
+    --> here we will store one or more(group) of modules
+
+Module:
+    --> it is just .py file
+    --> this module will store main logics(functions or classes) only.
+
+types of modules:
+=================
+2 types of modules we have:
+    --> predefined modules.
+        --> math
+        >>> math.factorial(5)
+        120
+        >>> math.pow(5,2)
+        25.0
+        >>> math.pi
+        3.141592653589793
+        >>> math.sqrt(36)
+        6.0
+        >>> math.floor(23.6)
+        23
+        >>> math.ceil(23.6)
+        24
+        --> re(regular expressions)
+            --> it will matches the sequence of characters based on the pattern.
+            --> here we have to prepare a pattern for getting proper information.
+            --> mainly it focus on validation
+                --> valid name
+                --> valid mail id and valid mobile number
+                --> * for 0 or more occurrences
+                --> + for 1 or more occurrences
+
+
+
+                >>> import re
+                >>> re.match("a","abdul")
+                <re.Match object; span=(0, 1), match='a'>
+                >>> re.match("a","mohammadh")
+                >>> re.search("a","mohammadh")
+                <re.Match object; span=(3, 4), match='a'>
+                >>> re.findall("a","mohammadh")
+                ['a', 'a']
+                >>> re.search("l","abdulla")
+                <re.Match object; span=(4, 5), match='l'>
+                >>> names = ["abdul","abdulla","noor","ebadilla","anil"]
+                >>> for i in names:
+                	if re.match("a",i):
+                		print(i)
+
+
+                abdul
+                abdulla
+                anil
+                >>> for name in names:
+                	if re.search("a",name):
+                		print(name)
+
+
+                abdul
+                abdulla
+                ebadilla
+                anil
+                >>> for name in names:
+                	if re.search("^a",name):
+                		print(name)
+
+
+                abdul
+                abdulla
+                anil
+                >>> for name in names:
+                	if re.search("l$",name):
+                		print(name)
+
+
+                abdul
+                anil
+                >>> names = ["abdul","abdulla","noor","ebadilla","anil","sunil"]
+                >>> for name in names:
+                	if re.search("l$",name):
+                		print(name)
+
+
+                abdul
+                anil
+                sunil
+                >>> names = ["abdul","abdulla","noor","ebadilla","anil","sunil","akil"]
+                >>> for i in names:
+                	if re.search("^al$",name):
+                		print(name)
+
+
+                >>> for i in names:
+                	if re.search("^al$",i):
+                		print(i)
+
+
+                >>> names = ["abdul","abdulla","noor","ebadilla","anil","sunil","akil","al"]
+                >>> for i in names:
+                	if re.search("^al$",i)
+
+                SyntaxError: invalid syntax
+                >>> for i in names:
+                	     if re.search("^al$",i):
+
+                          print(i)
+
+
+                al
+                >>>
+                >>> for i in names:
+                	if re.search("^a..l$",i):
+                		print(i)
+
+
+                anil
+                akil
+                >>> names
+                ['abdul', 'abdulla', 'noor', 'ebadilla', 'anil', 'sunil', 'akil', 'al']
+                >>> for name in names:
+                	if re.search("^a.*l$",name):
+                		print(name)
+
+
+                abdul
+                anil
+                akil
+                al
+                >>> for name in names:
+                	if re.search("^ab*l$",name):
+                		print(name)
+
+
+                al
+                >>> names.append("abbbl")
+                >>> names
+                ['abdul', 'abdulla', 'noor', 'ebadilla', 'anil', 'sunil', 'akil', 'al', 'abbbl']
+                >>> for name in names:
+                	if re.search("^ab*l$",name):
+                		print(name)
+
+
+                al
+                abbbl
+                >>> for name in names:
+                	if re.search("^a.+l$",name):
+                		print(name)
+
+
+                abdul
+                anil
+                akil
+                abbbl
+
+
+    --> user defined modules.
